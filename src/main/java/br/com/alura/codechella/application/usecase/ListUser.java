@@ -3,15 +3,17 @@ package br.com.alura.codechella.application.usecase;
 import br.com.alura.codechella.application.gateway.UserRepository;
 import br.com.alura.codechella.domain.entity.user.User;
 
-public class CreateUser {
+import java.util.List;
+
+public class ListUser {
 
     private final UserRepository userRepository;
 
-    public CreateUser(UserRepository userRepository) {
+    public ListUser(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public User execute(User user) {
-        return userRepository.save(user);
+    public List<User> execute() {
+        return userRepository.findAll();
     }
 }

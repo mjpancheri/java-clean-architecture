@@ -1,17 +1,16 @@
 package br.com.alura.codechella.application.usecase;
 
 import br.com.alura.codechella.application.gateway.UserRepository;
-import br.com.alura.codechella.domain.entity.user.User;
 
-public class CreateUser {
+public class DeleteUser {
 
     private final UserRepository userRepository;
 
-    public CreateUser(UserRepository userRepository) {
+    public DeleteUser(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public User execute(User user) {
-        return userRepository.save(user);
+    public void execute(String cpf) {
+        userRepository.delete(cpf);
     }
 }

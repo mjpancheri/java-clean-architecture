@@ -9,4 +9,10 @@ public interface UserRepository {
     User save(User user);
 
     List<User> findAll();
+
+    User findOne(String cpf);
+
+    void delete(String cpf);
+
+    User update(String cpf, User user);
 }
